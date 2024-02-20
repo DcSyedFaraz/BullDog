@@ -140,4 +140,6 @@ class SectionsController extends Controller
         $data['pages'] = About::where('page', $data['name'])->get();
         return view('admin.pages.about', $data);
     }
+
+  
 }

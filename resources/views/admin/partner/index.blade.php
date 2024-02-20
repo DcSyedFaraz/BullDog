@@ -30,19 +30,19 @@
             </tr>
           </tfoot>
           <tbody>
-            @foreach($gallerys as $key => $user)
+            @foreach($partners as $key => $user)
                 <tr>
                     <td>{{$user->id}}</td>
                     <td>
                       @if($user->image)
-                      <img src="/uploads/gallery/{{$user->image}}" class="img-fluid rounded-circle" style="max-width:50px" alt="{{$user->image}}">
+                      <img src="/uploads/partner/{{$user->image}}" class="img-fluid rounded-circle" style="max-width:50px" alt="{{$user->image}}">
                       @else
                       <img src="{{asset('images/avatar/64-1.jpg')}}" class="img-fluid rounded-circle" style="max-width:50px" alt="avatar.png">
                       @endif
                     </td>
                     <td>
-                        <a href="{{route('gallery.edit',$user->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fa fa-edit"></i></a>
-                        <form onsubmit="return confirm('Are you sure want to delete this.??')" method="POST" action="{{route('gallery.destroy',[$user->id])}}">
+                        <a href="{{route('partner.edit',$user->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fa fa-edit"></i></a>
+                        <form onsubmit="return confirm('Are you sure want to delete this.??')" method="POST" action="{{route('partner.destroy',[$user->id])}}">
                           @csrf
                           @method('delete')
                           <button class="btn btn-danger btn-sm dltBtn" data-id={{$user->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fa fa-trash"></i></button>
@@ -72,7 +72,7 @@
             @endforeach
           </tbody>
         </table>
-        <span style="float:right">{{$gallerys->links()}}</span>
+        <span style="float:right">{{$partners->links()}}</span>
       </div>
     </div>
 </div>
