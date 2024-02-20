@@ -156,6 +156,12 @@
                     </a>
                     <ul class="sub-menu children dropdown-menu ">
 
+                    <li class="{{ request()->routeIs('bulldog_stronger_slider.index') ? 'active' : '' }}">
+                            <a href="{{ route('bulldog_stronger_slider.index') }}">
+                                <i class="fa fa-puzzle-piece"></i>Slider
+                            </a>
+                        </li>
+
                         <li class="{{ request()->routeIs('stronger_section1.index') ? 'active' : '' }}">
                             <a href="{{ route('stronger_section1.index') }}">
                                 <i class="fa fa-puzzle-piece"></i>Section# 1
@@ -278,24 +284,41 @@
                 </li>
                 <li class="menu-item-has-children dropdown ">
 
-<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-    aria-expanded="false">
-    <i class="menu-icon fa fa-cogs"></i>Social Link
-</a>
-<ul class="sub-menu children dropdown-menu ">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <i class="menu-icon fa fa-cogs"></i>Social Link
+                </a>
+                <ul class="sub-menu children dropdown-menu ">
 
-    <li class="{{ request()->routeIs('social.index') ? 'active' : '' }}">
-        <a href="{{ route('social.index') }}">
-            <i class="fa fa-puzzle-piece"></i>View
-        </a>
-    </li>
-    <li class="{{ request()->routeIs('social.index') ? 'active' : '' }}">
-        <a href="{{ route('social.create') }}">
-            <i class="fa fa-puzzle-piece"></i>ADD
-        </a>
-    </li>
-</ul>
-</li>
+                    <li class="{{ request()->routeIs('social.index') ? 'active' : '' }}">
+                        <a href="{{ route('social.index') }}">
+                            <i class="fa fa-puzzle-piece"></i>View
+                        </a>
+                    </li>
+                    <li class="{{ request()->routeIs('social.index') ? 'active' : '' }}">
+                        <a href="{{ route('social.create') }}">
+                            <i class="fa fa-puzzle-piece"></i>ADD
+                        </a>
+                    </li>
+                </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown ">
+
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <i class="menu-icon fa fa-cogs"></i>Contact Us
+                </a>
+                <ul class="sub-menu children dropdown-menu ">
+
+                    <li class="{{ request()->routeIs('contact.index') ? 'active' : '' }}">
+                        <a href="{{ route('contact.index') }}">
+                            <i class="fa fa-puzzle-piece"></i>View
+                        </a>
+                    </li>
+                    
+                </ul>
+                </li>
 
 
              </ul>

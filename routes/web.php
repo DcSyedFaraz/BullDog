@@ -7,9 +7,11 @@ use App\Http\Controllers\Admin\OurServiceController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SectionsController;
+use App\Http\Controllers\BulldogStrongerSliderController;
 use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,9 +46,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
 
     // social
     Route::resource('social', SocialController::class);
+    Route::resource('bulldog_stronger_slider', BulldogStrongerSliderController::class);
+    Route::resource('contact', ContactController::class);
 
     // About
     Route::get('/about', [PagesController::class, 'about'])->name('about.index');
+
+    // slider
+  
 
     // Home Sections
     Route::get('/home_section1', [SectionsController::class, 'home_section1'])->name('home_section1.index');

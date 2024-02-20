@@ -20,6 +20,7 @@
                 <th>S.N</th>
                 <th>Link</th>
                 <th>Image</th>
+                <th>Action</th>
             </tr>
           </thead>
           <tfoot>
@@ -27,6 +28,7 @@
                 <th>S.N</th>
                 <th>Link</th>
                 <th>Image</th>
+                <th>Action</th>
               </tr>
           </tfoot>
           <tbody>
