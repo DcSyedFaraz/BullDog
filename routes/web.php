@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\OurServiceController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SectionsController;
+use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,14 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
     Route::get('/home', [PagesController::class, 'home'])->name('home.index');
     Route::post('/home/store', [PagesController::class, 'store'])->name('home.store');
+
+    // Testimonial 
+    Route::resource('testimonial', TestimonialController::class);
+    Route::resource('gallery', GalleryController::class);
+    Route::resource('partner', PartnerController::class);
+
+    // social
+    Route::resource('social', SocialController::class);
 
     // About
     Route::get('/about', [PagesController::class, 'about'])->name('about.index');
@@ -109,9 +118,11 @@ Route::middleware('auth')->group(function () {
 });
 
 
-
 Route::get('/setting', [PagesController::class, 'setting'])->name('setting.index');
 Route::post('/setting.store', [PagesController::class, 'settingstore'])->name('setting.store');
+
+
+ 
 
 
 require __DIR__ . '/auth.php';
